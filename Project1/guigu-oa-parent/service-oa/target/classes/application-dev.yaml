@@ -1,0 +1,28 @@
+# 端口号
+server:
+  port: 8800
+
+# 控制台输出mybatis日志信息
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+spring:
+  datasource: # 配置MySQL数据源
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guigu-oa
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss      # 日期格式
+    time-zone: GMT+8        # 时区+8
+  redis: # 配置Redis服务器
+    host: 192.168.236.140
+    port: 6379
+    password: 123456
+  activiti: # 配置activiti工作流
+    database-schema-update: true  # 需要的表不存在时，自动创建
+    db-history-used: true   # 使用历史表
+    history-level: full   # 历史表保存信息
+    check-process-definitions: true   # 校验流程文件
